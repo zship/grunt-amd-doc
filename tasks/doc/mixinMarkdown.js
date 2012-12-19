@@ -8,14 +8,14 @@ var constants = require('../constants.js');
 
 
 var mixinMarkdown = function(graph) {
-	var mixins = grunt.file.expandFiles(constants.docdir + '/mixin/**');
+	var mixins = grunt.file.expandFiles(constants.mixindir + '/**');
 	var documentedNames = [];
 
 	mixins.every(function(path) {
 		grunt.verbose.write('\t');
 		var mixin = grunt.file.read(path);
 
-		var moduleName = path.replace(constants.docdir + '/mixin/', '').replace('.md', '');
+		var moduleName = path.replace(constants.mixindir + '/', '').replace('.md', '');
 		//var name = path.replace(/\//g, '.');
 		var clazz = graph[moduleName];
 

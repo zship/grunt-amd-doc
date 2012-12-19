@@ -35,6 +35,8 @@ module.exports = function(grunt) {
 		var config = grunt.config.get(this.name);
 		var done = this.async();
 
+		constants.initialize(config);
+
 		['include', 'exclude'].forEach(function(name) {
 			config[name] = util.expand(config[name]);
 		});
@@ -196,7 +198,7 @@ module.exports = function(grunt) {
 
 
 				grunt.log.writeln('');
-				grunt.log.writeln('Rendering module definition files into ' + constants.docdir + '/out/classes...');
+				grunt.log.writeln('Rendering module definition files into ' + constants.outdir + '/classes...');
 				_.each(graph, function(val, key) {
 					if (!key) {
 						return true; //continue
@@ -210,7 +212,7 @@ module.exports = function(grunt) {
 					//console.log(path);
 					//console.log(val);
 					renderModule(val, key, config, function(graph, path, data) {
-						var filePath = constants.docdir + '/out/classes/' + path + '.html';
+						var filePath = constants.outdir + '/classes/' + path + '.html';
 						grunt.verbose.write('\t\t');
 						grunt.file.write(filePath, data, 'utf-8');
 					});
@@ -223,7 +225,7 @@ module.exports = function(grunt) {
 
 
 				grunt.log.writeln('');
-				grunt.log.writeln('Rendering taglist files into ' + constants.docdir + '/out/taglists...');
+				grunt.log.writeln('Rendering taglist files into ' + constants.outdir + '/taglists...');
 				_.each(graph, function(val, key) {
 					if (!key) {
 						return true; //continue
@@ -237,7 +239,7 @@ module.exports = function(grunt) {
 					//console.log(path);
 					//console.log(val);
 					renderTaglist(val, key, function(graph, path, data) {
-						var filePath = constants.docdir + '/out/taglists/' + path + '.html';
+						var filePath = constants.outdir + '/taglists/' + path + '.html';
 						grunt.verbose.write('\t\t');
 						grunt.file.write(filePath, data, 'utf-8');
 					});
@@ -249,7 +251,7 @@ module.exports = function(grunt) {
 
 
 				grunt.log.writeln('');
-				grunt.log.writeln('Rendering module list into ' + constants.docdir + '/out/menu.html...');
+				grunt.log.writeln('Rendering module list into ' + constants.outdir + '/menu.html...');
 
 				var classList = _.clone(Object.keys(graph));
 				var classStructure = {};
@@ -260,7 +262,7 @@ module.exports = function(grunt) {
 
 				var menu = renderMenu(classStructure, '');
 				grunt.verbose.write('\t');
-				grunt.file.write(constants.docdir + '/out/menu.html', menu, 'utf-8');
+				grunt.file.write(constants.outdir + '/menu.html', menu, 'utf-8');
 
 				grunt.log.ok(stopwatch.elapsed() + 'ms');
 				stopwatch.reset();

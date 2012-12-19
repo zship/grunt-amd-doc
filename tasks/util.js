@@ -1,7 +1,8 @@
 (function() {
 	'use strict';
 
-	var grunt = require('grunt');
+
+	var grunt = require('grunt/lib/grunt.js');
 	var _ = grunt.utils._;
 
 

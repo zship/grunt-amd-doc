@@ -4,7 +4,7 @@
 var grunt = require('grunt/lib/grunt.js');
 var child = require("child_process");
 var constants = require('../constants.js');
-var Deferred = require('simply-deferred').Deferred;
+var Deferred = require('./lib/deferreds.js').Deferred;
 
 
 var runJsdoc = function(files) {

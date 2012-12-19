@@ -20,7 +20,6 @@ module.exports = function(grunt) {
 	var mixinMarkdown = require('./doc/mixinMarkdown.js');
 	var transformLongNames = require('./doc/transformLongNames.js');
 	var parseMarkdown = require('./doc/parseMarkdown.js');
-	//var deriveInheritance = require('./doc/deriveInheritance.js');
 	var mixinInherited = require('./doc/mixinInherited.js');
 	var renderModule = require('./doc/renderModule.js');
 	var renderTaglist = require('./doc/renderTaglist.js');

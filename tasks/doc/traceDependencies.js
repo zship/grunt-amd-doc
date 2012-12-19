@@ -5,7 +5,7 @@ var constants = require('../constants.js');
 var requirejs = require(constants.rjs);
 var grunt = require('grunt/lib/grunt.js');
 var util = require('./util.js');
-var Deferred = require('simply-deferred').Deferred;
+var Deferred = require('./lib/deferreds.js').Deferred;
 
 
 var traceDependencies = function(files) {

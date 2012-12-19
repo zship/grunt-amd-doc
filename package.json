@@ -1,0 +1,20 @@
+{
+	"name": "grunt-amd-doc",
+	"title": "grunt-amd-doc",
+	"description": "Documentation generator for AMD-based projects",
+	"version": "0.1.0",
+	"homepage": "https://github.com/zship/grunt-amd-doc",
+	"author": "Zach Shipley <zach@zachshipley.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zship/grunt-amd-doc.git"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"grunt": "0.3.x",
+		"jade": "0.27.x",
+		"marked": "0.2.x",
+		"highlight.js": "7.3.x",
+		"jsdoc": "git://github.com/jsdoc3/jsdoc.git"
+	}
+}

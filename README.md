@@ -82,7 +82,7 @@ AMD conventions to infer more information.
 
 grunt-amd-doc reads two sections of your config: `doc` and `requirejs`. `doc`
 can contain these properties (example from
-[deferreds.js](https://github.com/zship/deferreds.js):
+[deferreds.js](https://github.com/zship/deferreds.js)):
 
 ```js
 doc: {

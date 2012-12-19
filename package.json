@@ -7,7 +7,7 @@
 	"author": "Zach Shipley <zach@zachshipley.com>",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/zship/grunt-amd-doc.git"
+		"url": "https://github.com/zship/grunt-amd-doc"
 	},
 	"license": "MIT",
 	"dependencies": {
@@ -15,6 +15,10 @@
 		"jade": "0.27.x",
 		"marked": "0.2.x",
 		"highlight.js": "7.3.x",
-		"jsdoc": "git://github.com/jsdoc3/jsdoc.git"
-	}
+		"jsdoc": "git://github.com/jsdoc3/jsdoc.git#8feb06eccba32ff00696e991a213fe964a7b74cd"
+	},
+	"keywords": [
+		"gruntplugin",
+		"amd"
+	]
 }

@@ -6,7 +6,7 @@ It post-processes the JSON output of jsdoc3, using RequireJS configuration and
 AMD conventions to infer more information.
 
 
-Installataion
+Installation
 -------------
 
 From the same directory as your Gruntfile, run
@@ -149,7 +149,7 @@ What it does
 	* Taglist for each module
 		* taglists and module definitions are rendered from
 		  [jade](https://github.com/visionmedia/jade) templates (see tasks/tpl)
-	* Heirarchical menu linking to every module
+	* Hierarchical menu linking to every module
 * Summary information
 	* List of all declared and external Types, both long names and short names
 	* List of ambiguous short names (e.g. `joss/geometry/Rect` and

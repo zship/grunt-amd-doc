@@ -34,12 +34,18 @@ can contain these properties (example from
 
 ```js
 doc: {
-	//github URL where source is available. the file path and line number of
-	//each documented variable will be added to this to make source links.
-	repoview: 'https://github.com/zship/deferreds.js/blob/develop/',
 	//globbing-supported String or Array of Strings with gruntfile-relative
 	//files to process for documentation
 	include: 'src/deferreds/**/*.js',
+	//directory to output generated HTML (default = 'doc/out')
+	out: 'doc/out',
+	//directory to store jsdoc cache (default = 'doc/cache')
+	cache: 'doc/cache',
+	//directory to look for markdown mixins (default = 'doc/mixin')
+	mixin: 'doc/mixin',
+	//github URL where source is available. the file path and line number of
+	//each documented variable will be added to this to make source links.
+	repoview: 'https://github.com/zship/deferreds.js/blob/develop/',
 	//Array of Type (see tasks/doc/Types.js) objects to transform into links
 	//when used as parameter types, return types, or description namepaths
 	types: (function() {

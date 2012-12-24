@@ -221,7 +221,7 @@ var massageJsdoc = function(json, deps) {
 			userDefined: true,
 			longName: classLongName,
 			name: className,
-			link: '/#/' + classLongName
+			link: '#/' + classLongName
 		});
 	});
 
@@ -230,7 +230,7 @@ var massageJsdoc = function(json, deps) {
 			userDefined: true,
 			longName: record.longname,
 			name: record.moduleShortName + '.' + record.name,
-			link: '/#/' + record.longname
+			link: '#/' + record.longname
 		});
 	});
 
@@ -300,7 +300,7 @@ var massageJsdoc = function(json, deps) {
 		db({kind: 'member'}, {memberof: module}).each(function(record) {
 			var member = graph[module]['properties'][record.name] = record;
 			member.longName = member.longname;
-			member.link = '/#/' + member.longName;
+			member.link = '#/' + member.longName;
 
 			if (!member.type || !member.type.names) {
 				member.types = [Types.getType(null)];
@@ -323,7 +323,7 @@ var massageJsdoc = function(json, deps) {
 		db({isEnum: true}, {memberof: module}).each(function(record) {
 			var member = graph[module]['properties'][record.name] = record;
 			member.longName = member.longname;
-			member.link = '/#/' + member.longName;
+			member.link = '#/' + member.longName;
 
 			if (!member.type || !member.type.names) {
 				member.types = [Types.getType(null)];
@@ -358,7 +358,7 @@ var massageJsdoc = function(json, deps) {
 				}
 
 				method.longName = method.longname;
-				method.link = '/#/' + method.longName;
+				method.link = '#/' + method.longName;
 				method.description = method.description || '';
 
 				method.params = method.params || [];

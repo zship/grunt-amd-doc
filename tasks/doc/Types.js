@@ -10,30 +10,6 @@ var typeMap = {};
 var undeclaredTypes = [];
 
 
-//add some standard JavaScript types
-['Number', 'String', 'Object', 'Function', 'Array', 'RegExp', 'Boolean'].forEach(function(val) {
-	typeMap[val] = {
-		name: val,
-		link: 'https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/' + val
-	};
-});
-
-typeMap['Any'] = typeMap['*'] = {
-	name: 'Any',
-	link: 'https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects'
-};
-
-typeMap['void'] = {
-	name: 'void',
-	link: 'https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/undefined'
-};
-
-typeMap['Element'] = {
-	name: 'Element',
-	link: 'https://developer.mozilla.org/en-US/docs/DOM/element'
-};
-
-
 var Types = {
 
 	map: typeMap,

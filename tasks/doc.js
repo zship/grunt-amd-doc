@@ -2,6 +2,8 @@ module.exports = function(grunt) {
 	'use strict';
 
 
+	var fs = require('fs');
+	var path = require('path');
 	var _ = grunt.utils._;
 	var constants = require('./constants.js');
 	var requirejs = require(constants.rjs);
@@ -175,17 +177,34 @@ module.exports = function(grunt) {
 
 				//console.log(JSON.stringify(graph, false, 4));
 
+				var readme = path.join(process.cwd(), config.mixin, 'README.md');
+				if (fs.existsSync(readme)) {
+					grunt.log.writeln('');
+					grunt.log.writeln('Parsing and linking ' + readme + '...');
+					var readmeContent = grunt.file.read(readme).toString();
+					readmeContent = transformLongNames(readmeContent, 'README.md');
+					readmeContent = parseMarkdown(readmeContent);
+					var readmeSave = constants.outdir + '/README.html';
+					grunt.file.write(readmeSave, readmeContent, 'utf-8');
+					grunt.log.ok(stopwatch.elapsed() + 'ms');
+					stopwatch.reset();
+				}
+
 
 				grunt.log.writeln('');
 				grunt.log.writeln('Transforming references to defined methods in descriptions into links...');
-				transformLongNames(graph);
+				docutil.getDescriptions(graph).forEach(function(obj) {
+					obj.description = transformLongNames(obj.description, obj.longName);
+				});
 				grunt.log.ok(stopwatch.elapsed() + 'ms');
 				stopwatch.reset();
 
 
 				grunt.log.writeln('');
 				grunt.log.writeln('Parsing and rendering markdown in descriptions...');
-				parseMarkdown(graph);
+				docutil.getDescriptions(graph).forEach(function(obj) {
+					obj.description = parseMarkdown(obj.description);
+				});
 				grunt.log.ok(stopwatch.elapsed() + 'ms');
 				stopwatch.reset();
 

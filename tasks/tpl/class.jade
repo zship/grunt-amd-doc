@@ -61,19 +61,19 @@ mixin methodDef(method)
 
 - if (cl.module)
     div.module.section
-        h3.section-header(rel='/#/' + module + '#SOverview') Overview
+        h3.section-header(rel='#/' + module + '#SOverview') Overview
         div.subsection
             div.meta
-                a(class='permalink', href='/#/' + module + '#SOverview', alt='Permalink to ' + module + ' overview', title='Permalink to ' + module + ' overview')
+                a(class='permalink', href='#/' + module + '#SOverview', alt='Permalink to ' + module + ' overview', title='Permalink to ' + module + ' overview')
                     i.icomoon-hash
             div.description!=cl.module.description
 
 - if (cl.meta && cl.meta.deps && cl.meta.deps.length)
     div.dependencies.section
-        h3.section-header(rel='/#/' + module + '#SDependencies') Dependencies
+        h3.section-header(rel='#/' + module + '#SDependencies') Dependencies
         div.subsection
             div.meta
-                a(class='permalink', href='/#/' + module + '#SDependencies', alt='Permalink to ' + module + ' dependencies', title='Permalink to ' + module + ' dependencies ')
+                a(class='permalink', href='#/' + module + '#SDependencies', alt='Permalink to ' + module + ' dependencies', title='Permalink to ' + module + ' dependencies ')
                     i.icomoon-hash
             ul
                 each dep in cl.meta.deps
@@ -85,10 +85,10 @@ mixin methodDef(method)
 
 - if (cl.constructor && cl.constructor.kind === 'class')
     div.constructors.section
-        h3.section-header(rel='/#/' + module + '#SConstructor') Constructor
+        h3.section-header(rel='#/' + module + '#SConstructor') Constructor
         div.constructor.subsection
             div.meta
-                a(class='permalink', href='/#/' + module + '#SConstructor', alt='Permalink to ' + cl.constructor.longName, title='Permalink to ' + cl.constructor.longName)
+                a(class='permalink', href='#/' + module + '#SConstructor', alt='Permalink to ' + cl.constructor.longName, title='Permalink to ' + cl.constructor.longName)
                     i.icomoon-hash
                 a(class='srclink', alt='View Source', title='View Source', href=config.repoview + cl.constructor.meta.path + '/' + cl.constructor.meta.filename + '#L' + cl.constructor.meta.lineno)
                     i.icomoon-code
@@ -98,7 +98,7 @@ mixin methodDef(method)
 
 - if (cl.properties && Object.keys(cl.properties).length)
     div.properties.section
-        h3.section-header(rel='/#/' + module + '#SProperties') Properties
+        h3.section-header(rel='#/' + module + '#SProperties') Properties
         each key in Object.keys(cl.properties).sort()
             - var prop = cl.properties[key]
             - var clazz = (prop.inherited || prop.overridden) ? 'inherited property subsection' : 'property subsection'
@@ -141,7 +141,7 @@ mixin methodDef(method)
 
 - if (cl.methods && Object.keys(cl.methods).length)
     div.methods.section
-        h3.section-header(rel='/#/' + module + '#SMethods') Methods
+        h3.section-header(rel='#/' + module + '#SMethods') Methods
         each key in Object.keys(cl.methods).sort()
             - var method = cl.methods[key]
             - var clazz = (method.inherited || method.overridden) ? 'inherited method subsection' : 'method subsection'
@@ -172,7 +172,7 @@ mixin methodDef(method)
 
 - if (cl.jquery && Object.keys(cl.jquery).length)
     div.jquery.section
-        h3.section-header(rel='/#/' + module + '#SjQuery') jQuery Plugins
+        h3.section-header(rel='#/' + module + '#SjQuery') jQuery Plugins
         each key in Object.keys(cl.jquery).sort()
             - var method = cl.jquery[key]
             div.jquery.subsection(rel=method.link)

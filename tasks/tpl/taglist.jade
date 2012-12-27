@@ -10,22 +10,22 @@ h2
 - if (cl.module)
     div.module
         h3
-            a(href='/#/' + module + '#SOverview') Overview
+            a(href='#/' + module + '#SOverview') Overview
 
 - if (cl.meta && cl.meta.deps)
     div.dependencies
         h3
-            a(href='/#/' + module + '#SDependencies') Dependencies
+            a(href='#/' + module + '#SDependencies') Dependencies
 
 - if (cl.constructor && cl.constructor.kind === 'class')
     div.constructor
         h3 
-            a(href='/#/' + module + '#SConstructor') Constructor
+            a(href='#/' + module + '#SConstructor') Constructor
 
 - if (cl.properties && Object.keys(cl.properties).length)
     div.properties
         h3
-            a(href='/#/' + module + '#SProperties') Properties
+            a(href='#/' + module + '#SProperties') Properties
         ul
             each key in Object.keys(cl.properties).sort()
                 - var prop = cl.properties[key]
@@ -43,7 +43,7 @@ h2
 - if (cl.methods && Object.keys(cl.methods).length)
     div.methods
         h3
-            a(href='/#/' + module + '#SMethods') Methods
+            a(href='#/' + module + '#SMethods') Methods
         ul
             each key in Object.keys(cl.methods).sort()
                 - var method = cl.methods[key]
@@ -61,7 +61,7 @@ h2
 - if (cl.jquery && Object.keys(cl.jquery).length)
     div.jquery
         h3
-            a(href='/#/' + module + '#SjQuery') jQuery Plugins
+            a(href='#/' + module + '#SjQuery') jQuery Plugins
         ul
             each key in Object.keys(cl.jquery).sort()
                 - var method = cl.jquery[key]

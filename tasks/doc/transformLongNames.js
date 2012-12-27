@@ -53,7 +53,7 @@ var transformLongNames = function(graph) {
 			var shortName = type.name + '.' + propName;
 
 			if (type.link) {
-				description = description.replace(rName, '<a href="/#/' + longName + '" title="' + longName + '">' + shortName + '</a>');
+				description = description.replace(rName, '<a href="#/' + longName + '" title="' + longName + '">' + shortName + '</a>');
 			}
 			else {
 				description = description.replace(rName, shortName);

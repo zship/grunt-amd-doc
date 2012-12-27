@@ -2,7 +2,7 @@
 	"name": "grunt-amd-doc",
 	"title": "grunt-amd-doc",
 	"description": "Grunt plugin for the amd-doc documentation generator",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"homepage": "https://github.com/zship/grunt-amd-doc",
 	"author": "Zach Shipley <zach@zachshipley.com>",
 	"repository": {

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
 
 	//idea: put a search box above class list that filters the class list
-	grunt.registerTask('doc', 'Runs jsdoc', function() {
+	grunt.registerTask('amd-doc', 'Runs jsdoc', function() {
 
 		var done = this.async();
 		var config = grunt.config.get(this.name);

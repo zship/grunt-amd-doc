@@ -22,18 +22,18 @@ grunt.loadNpmTasks('grunt-amd-doc');
 ```
 
 You can verify that the task is available by running `grunt --help` and
-checking that "doc" is under "Available tasks".
+checking that "amd-doc" is under "Available tasks".
 
 
 Usage
 -----
 
-grunt-amd-doc reads two sections of your config: `doc` and `requirejs`. `doc`
-can contain these properties (example from
+grunt-amd-doc reads two sections of your config: `amd-doc` and `requirejs`.
+`amd-doc` can contain these properties (example from
 [deferreds.js](https://github.com/zship/deferreds.js)):
 
 ```js
-doc: {
+'amd-doc': {
 	//globbing-supported String or Array of Strings with gruntfile-relative
 	//files to process for documentation
 	include: 'src/deferreds/**/*.js',
@@ -111,4 +111,4 @@ object](https://github.com/jrburke/r.js/blob/master/build/example.build.js).
 grunt-amd-doc uses `basePath`, `paths`, and `packages` (all optional) to
 transform file names to AMD module names.
 
-Once these options are in place, `grunt doc` will run amd-doc.
+Once these options are in place, `grunt amd-doc` will run amd-doc.

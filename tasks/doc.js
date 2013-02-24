@@ -3,23 +3,35 @@ module.exports = function(grunt) {
 
 
 	var amddoc = require('amd-doc');
+	var forEachSeries = require('deferreds').forEachSeries;
 
 
 	//idea: put a search box above class list that filters the class list
-	grunt.registerTask('amd-doc', 'Runs jsdoc', function() {
+	grunt.registerMultiTask('amd-doc', 'Runs jsdoc', function() {
 
 		var done = this.async();
-		var config = grunt.config.get(this.name);
-		config.requirejs = grunt.config.get('requirejs');
-		config.verbose = grunt.option('verbose');
 
-		config.out = config.out || 'doc/out';
-		config.cache = config.cache || 'doc/cache';
-		config.mixin = config.mixin || 'doc/mixin';
+		var options = this.options();
+		options.requirejs = grunt.config.get('requirejs');
+		options.verbose = grunt.option('verbose');
+		options.out = options.out || 'doc/out';
+		options.cache = options.cache || 'doc/cache';
+		options.mixin = options.mixin || 'doc/mixin';
 
-		amddoc.compile(config).then(function() {
-			done();
-		});
+		forEachSeries(this.files, function(f) {
+			var src = f.src.filter(function(filepath) {
+				if (!grunt.file.exists(filepath)) {
+					grunt.log.warn('Source file "' + filepath + '" not found.');
+					return false;
+				} else {
+					return true;
+				}
+			});
+
+			options.include = src;
+
+			return amddoc.compile(options);
+		}).then(done);
 
 	});
 

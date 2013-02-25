@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 				}
 			});
 
-			options.include = src;
+			options.files = src;
 
 			return amddoc.compile(options);
 		}).then(done);

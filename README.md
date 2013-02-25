@@ -5,6 +5,8 @@ grunt-amd-doc is a grunt multi-task for
 [amd-doc](https://github.com/zship/amd-doc), a JavaScript documentation
 generator for AMD-based projects.
 
+This plugin requires Grunt `~0.4.0`
+
 
 Installation
 -------------
